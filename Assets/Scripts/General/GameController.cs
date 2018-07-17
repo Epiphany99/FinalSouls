@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameController : Singleton<GameController>
 {
     public enum CursorLock
     {
@@ -34,16 +34,9 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
-
-        // Quit the game
         if (Input.GetKeyDown(KeyCode.F12))
         {
-            #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-            #else
-                Application.Quit();
-            #endif
+            Quit();
         }
     }
 
@@ -63,6 +56,16 @@ public class GameController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 break;
         }
+    }
+
+    public void Quit()
+    {
+        // Quit the game
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
 
     private void OnGUI()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StandardBullet : Bullet
+public class StandardBullet : AbstractBullet
 {
     private Vector3 m_direction;
     private float m_lifeTimer = 0.0f;
@@ -39,9 +39,9 @@ public class StandardBullet : Bullet
 
         if (Utilities.IsInLayerMask(other.gameObject.layer, HurtableLayerMask))
         {
-            // ToDo: hurt enemy
-            Debug.Log("Ouch");
+            other.gameObject.GetComponent<EnemyHealthController>().ReceiveDamage(BulletDamage);
         }
+
         gameObject.SetActive(false);
     }
 

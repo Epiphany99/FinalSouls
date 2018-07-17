@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackController : MonoBehaviour
 {
-    public Bullet[] Attacks;
+    public AbstractBullet[] Attacks;
 
     private ObjectPooler m_objPool;
     private Transform m_bulletSpawn;

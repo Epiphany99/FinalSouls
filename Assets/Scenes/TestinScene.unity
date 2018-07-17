@@ -698,8 +698,9 @@ GameObject:
   - component: {fileID: 523741593}
   - component: {fileID: 523741592}
   - component: {fileID: 523741591}
+  - component: {fileID: 523741595}
   m_Layer: 11
-  m_Name: Capsule
+  m_Name: StaticTurret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,6 +774,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &523741595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 523741590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91b23c011f69d34bb1fe2952ae81f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  currentHealth: 0
 --- !u!1 &625367608
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,6 +2731,7 @@ GameObject:
   - component: {fileID: 2053493717}
   - component: {fileID: 2053493719}
   - component: {fileID: 2053493718}
+  - component: {fileID: 2053493721}
   - component: {fileID: 2053493720}
   m_Layer: 0
   m_Name: Player
@@ -2798,3 +2813,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Attacks:
   - {fileID: 1496319916}
+--- !u!114 &2053493721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2053493716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6295a07eb26b0d1459d2c7805cafb12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  currentHealth: 0

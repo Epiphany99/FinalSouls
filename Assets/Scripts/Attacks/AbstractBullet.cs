@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public abstract class AbstractBullet : MonoBehaviour
 {
     public GameObject Owner;
     public uint BulletDamage = 10;
