@@ -11,7 +11,7 @@ public class StandardBullet : AbstractBullet
     {
         switch(AimType)
         {
-            case Target.PlayerForward:
+            case Target.Forward:
                 m_direction = Owner.transform.forward;
                 break;
 
@@ -39,7 +39,15 @@ public class StandardBullet : AbstractBullet
 
         if (Utilities.IsInLayerMask(other.gameObject.layer, HurtableLayerMask))
         {
-            other.gameObject.GetComponent<EnemyHealthController>().ReceiveDamage(BulletDamage);
+            // ToDo: Not cool
+            if(other.gameObject.name == "Player")
+            {
+                PlayerHealthController.Instance.ReceiveDamage(BulletDamage);
+            }
+            else
+            {
+                other.gameObject.GetComponent<EnemyHealthController>().ReceiveDamage(BulletDamage);
+            }
         }
 
         gameObject.SetActive(false);

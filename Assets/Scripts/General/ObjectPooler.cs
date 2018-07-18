@@ -71,7 +71,7 @@ public class ObjectPooler : Singleton<ObjectPooler>
         return obj;
     }
 
-    public void PoolObject(PooledElement toPool, Vector3 startPos)
+    public void PoolObject(PooledElement toPool, GameObject owner, Vector3 startPos)
     {
         GameObject obj = null;
 
@@ -79,6 +79,7 @@ public class ObjectPooler : Singleton<ObjectPooler>
         {
             case PooledElement.PlayerBulletStandard:
                 obj = m_playerBulletStandardPool[m_playerBulletStandardCounter];
+                obj.GetComponent<StandardBullet>().Owner = owner;
                 if (++m_playerBulletStandardCounter >= PlayerBulletStandardAmount)
                 {
                     m_playerBulletStandardCounter = 0;
@@ -87,6 +88,7 @@ public class ObjectPooler : Singleton<ObjectPooler>
 
             case PooledElement.EnemyBulletStandard:
                 obj = m_enemyBulletStandardPool[m_enemyBulletStandardCounter];
+                obj.GetComponent<StandardBullet>().Owner = owner;
                 if (++m_enemyBulletStandardCounter >= EnemyBulletStandardAmount)
                 {
                     m_enemyBulletStandardCounter = 0;

@@ -30,7 +30,7 @@ public class AttackController : MonoBehaviour
         {
             if(standardBulletTimer > Attacks[0].BulletCoolDown)
             {
-                ObjectPooler.Instance.PoolObject(ObjectPooler.PooledElement.PlayerBulletStandard, m_bulletSpawn.position);
+                ObjectPooler.Instance.PoolObject(ObjectPooler.PooledElement.PlayerBulletStandard, gameObject, m_bulletSpawn.position);
                 standardBulletTimer = 0.0f;
             }
         }

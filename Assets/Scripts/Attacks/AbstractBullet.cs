@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class AbstractBullet : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject Owner;
     public uint BulletDamage = 10;
     public float BulletSpeed = 5.0f;
@@ -20,7 +21,7 @@ public abstract class AbstractBullet : MonoBehaviour
 
     public enum Target
     {
-        PlayerForward,
+        Forward,
         MousePosition
     }
     public Target AimType;

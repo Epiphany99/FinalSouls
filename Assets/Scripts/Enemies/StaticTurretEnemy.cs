@@ -71,7 +71,7 @@ public class StaticTurretEnemy : MonoBehaviour
                 break;
 
             case Action.Attack:
-                ObjectPooler.Instance.PoolObject(ObjectPooler.PooledElement.EnemyBulletStandard, m_bulletSpawn.position);
+                ObjectPooler.Instance.PoolObject(ObjectPooler.PooledElement.EnemyBulletStandard, gameObject, m_bulletSpawn.position);
                 ActionState = Action.Searching;
 
                 break;
